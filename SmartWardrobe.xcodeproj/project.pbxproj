@@ -56,7 +56,7 @@
 				AA0000000000000000000405 /* Services */,
 				AA0000000000000000000406 /* Views */,
 			);
-			path = ..;
+			path = .;
 			sourceTree = "<group>";
 		};
 		AA0000000000000000000404 /* Models */ = { isa = PBXGroup; children = ( AA0000000000000000000102 /* WardrobeItem.swift */, AA0000000000000000000103 /* Outfit.swift */, ); name = Models; path = Models; sourceTree = "<group>"; };
