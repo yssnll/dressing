@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.Xcode" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="LAUNCH-SCENE-001">
+            <objects>
+                <viewController id="LAUNCH-VC-001" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LAUNCH-VIEW-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="LAUNCH-STACK-001">
+                                <rect key="frame" x="116.0" y="367.0" width="161.0" height="118.0"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LAUNCH-IMAGE-001">
+                                        <rect key="frame" x="59.0" y="0.0" width="42.0" height="42.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="42" id="LAUNCH-IMAGE-WIDTH"/>
+                                            <constraint firstAttribute="height" constant="42" id="LAUNCH-IMAGE-HEIGHT"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMART WARDROBE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAUNCH-LABEL-001">
+                                        <rect key="frame" x="0.0" y="56.0" width="161.0" height="19.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.1098" green="0.1176" blue="0.1569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ton styliste personnel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAUNCH-SUBTITLE-001">
+                                        <rect key="frame" x="14.0" y="89.0" width="133.0" height="19.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.4196" green="0.4314" blue="0.4706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9686" green="0.9608" blue="0.9412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LAUNCH-STACK-001" firstAttribute="centerX" secondItem="LAUNCH-VIEW-001" secondAttribute="centerX" id="LAUNCH-CENTER-X"/>
+                            <constraint firstItem="LAUNCH-STACK-001" firstAttribute="centerY" secondItem="LAUNCH-VIEW-001" secondAttribute="centerY" id="LAUNCH-CENTER-Y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAUNCH-FIRST-RESPONDER-001" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="20"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LaunchLogo" width="42" height="42"/>
+    </resources>
+</document>
