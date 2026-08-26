@@ -10,6 +10,31 @@ extension Color {
     static let wardrobeGreen = Color(red: 0.22, green: 0.61, blue: 0.47)
 }
 
+struct LogoMark: View {
+    var size: CGFloat = 42
+    var showsWordmark: Bool = false
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ZStack {
+                RoundedRectangle(cornerRadius: size * 0.28, style: .continuous)
+                    .fill(Color.wardrobeInk)
+                Image(systemName: "hanger")
+                    .font(.system(size: size * 0.42, weight: .bold))
+                    .foregroundStyle(Color.wardrobeCream)
+            }
+            .frame(width: size, height: size)
+
+            if showsWordmark {
+                Text("SMART WARDROBE")
+                    .font(.system(size: 13, weight: .bold, design: .rounded))
+                    .tracking(1.3)
+                    .foregroundStyle(Color.wardrobeInk)
+            }
+        }
+    }
+}
+
 struct ScreenTitle: View {
     let eyebrow: String
     let title: String
@@ -23,6 +48,8 @@ struct ScreenTitle: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 7) {
+            LogoMark(size: 36, showsWordmark: true)
+                .padding(.bottom, 10)
             if !eyebrow.isEmpty {
                 Text(eyebrow.uppercased())
                     .font(.system(size: 11, weight: .bold, design: .rounded))
