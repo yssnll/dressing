@@ -1,0 +1,52 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Archive SmartWardrobe
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Build unsigned archive
+        run: |
+          xcodebuild \
+            -project SmartWardrobe.xcodeproj \
+            -scheme SmartWardrobe \
+            -sdk iphoneos \
+            -configuration Release \
+            -archivePath "$PWD/build/SmartWardrobe.xcarchive" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            archive
+
+      - name: Package IPA
+        run: |
+          mkdir -p build/Payload
+          cp -R build/SmartWardrobe.xcarchive/Products/Applications/SmartWardrobe.app build/Payload/
+          ditto -c -k --sequesterRsrc --keepParent \
+            build/Payload \
+            build/SmartWardrobe-unsigned.ipa
+
+      - name: Upload IPA artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartWardrobe-unsigned-ipa
+          path: build/SmartWardrobe-unsigned.ipa
+          if-no-files-found: error
+
+      - name: Upload Xcode archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartWardrobe-xcarchive
+          path: build/SmartWardrobe.xcarchive
